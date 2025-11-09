@@ -3,51 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de Captura</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Portafolio Personal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <form>
-    <fieldset>
-      <legend>Datos Personales</legend>
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" name="name" required>
 
-      <label for="age">Edad:</label>
-      <input type="number" id="age" name="age" required>
-
-      <label for="gender">Género:</label>
-      <select id="gender" name="gender" required>
-        <option value="">Selecciona</option>
-        <option value="femenino">Femenino</option>
-        <option value="masculino">Masculino</option>
-        <option value="otro">Otro</option>
-      </select>
-    </fieldset>
-
-    <fieldset>
-      <legend>Preguntas</legend>
-      <p>¿Cuál es tu sistema operativo favorito?</p>
-      <label><input type="radio" name="os" value="windows" required> Windows</label>
-      <label><input type="radio" name="os" value="macos"> MacOS</label>
-      <label><input type="radio" name="os" value="linux"> Linux</label>
-
-      <p>¿Qué tecnologías utilizas? (Selecciona todas las que correspondan):</p>
-      <label><input type="checkbox" name="tech" value="html"> HTML</label>
-      <label><input type="checkbox" name="tech" value="css"> CSS</label>
-      <label><input type="checkbox" name="tech" value="javascript"> JavaScript</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>Comentarios Finales</legend>
-      <label for="comments">Escribe tus comentarios:</label>
-      <textarea id="comments" name="comments" rows="5"></textarea>
-    </fieldset>
-
-    <div class="botones">
-      <button type="button">Siguiente</button>
-      <button type="submit">Enviar</button>
+  <!-- Barra de navegación fija -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="bi bi-person-circle"></i> Mi Portafolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
     </div>
-  </form>
+  </nav>
+
+  <!-- Sección Sobre mí -->
+  <section id="sobre-mi" class="container seccion mt-5 pt-5">
+    <div class="card text-center shadow">
+      <div class="card-body">
+        <img src="img/mi foto.jpg" class="rounded-circle mb-3" width="120" alt="Foto perfil">
+        <h3 class="card-title">Irving Alain Ambario Heredia</h3>
+        <p class="card-text">
+          Consultor Fiscal. El cumplimiento fiscal no es opcional, es parte de tu reputación empresarial.
+          Ayudo a emprendedores, profesionistas y empresas a entender y aplicar estrategias fiscales, digitales y emocionales que generan impacto.
+          Desde cursos en línea hasta asesorías personalizadas, mi trabajo combina claridad técnica con empatía y creatividad.
+        </p>
+        <span class="badge bg-primary">CFDI</span>
+        <span class="badge bg-success">E.CONTA</span>
+        <span class="badge bg-warning text-dark">SAT</span>
+        <span class="badge bg-info text-dark">SHCP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrusel de proyectos -->
+  <section id="proyectos" class="container seccion mt-5">
+    <h2 class="text-center mb-4">Mis Proyectos destacados</h2>
+    <div id="carouselProyectos" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/Udemy.png" class="d-block w-100" alt="Proyecto 1">
+        </div>
+        <div class="carousel-item">
+          <img src="img/Youtube.png" class="d-block w-100" alt="Proyecto 2">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProyectos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselProyectos" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Formulario de contacto -->
+  <section id="contacto" class="container seccion mt-5 mb-5">
+    <h2 class="text-center mb-4">Contáctame</h2>
+    <form class="p-4 shadow rounded bg-light">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="correo" required>
+      </div>
+      <div class="mb-3">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100"><i class="bi bi-envelope-check-fill"></i> Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p>© 2025 Contasapiens</p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+      <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

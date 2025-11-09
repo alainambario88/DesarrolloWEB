@@ -1,0 +1,29 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f6f7;
+}
+
+/* Ajuste para que las secciones no queden ocultas detrás del navbar */
+.seccion {
+  scroll-margin-top: 100px;
+}
+
+h2 {
+  font-weight: 700;
+  color: #1B1B32;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+}
+
+.badge {
+  margin: 5px;
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  color: #7ADE30;
+  transition: 0.3s;
+}
